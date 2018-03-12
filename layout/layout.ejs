@@ -1,12 +1,21 @@
 <html>
 <%- partial('_partial/head')%>
-<body>
-<%- body%>
+   
 
-<%if(is_home()){%>
-<!--加载导航栏所需js文件-->
-<%- partial('_partial/afterfooter')%>
-<%}%>
+    <body id="scrapbook" class="<% if(is_home()) {%>
+        mt-archive-listing mt-category-archive two-columns
+    <%}else{%>
+        mt-entry-archive one-column
+        <%}%>">
+        <script type="text/javascript">
+            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) document.body.classList.add('mobile');
+        </script>
+        <%- body%>
 
-</body>
+
+        <%- partial('_partial/afterfooter')%>
+
+
+    </body>
+
 </html>

@@ -1,26 +1,428 @@
-<%- partial('_partial/nav')%>
-<div class="row" style="padding-top: 70px">
-    <div class="container center-block">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Blog</h3>
+<div id="container">
+    <div id="container-inner">
+        <div id="header">
+            <div id="header-inner">
+                <div id="header-content">
+
+
+                    <div id="header-name">阮一峰的网络日志
+                        <span id="site_location"> »
+                            <a href="http://www.ruanyifeng.com/blog/" accesskey="1">首页</a>
+                        </span>
+                        <span id="site_archive"> »
+                            <a href="http://www.ruanyifeng.com/blog/archives.html">档案</a>
+                        </span>
+                    </div>
+
+                    <div id="google_search">
+                        <!-- SiteSearch Google -->
+                        <form action="https://www.baidu.com/s" target="_blank" method="get" id="cse-search-box">
+                            <div>
+                                <input type="text" size="20" name="origin" class="searchbox" id="sbi" value="" />
+                                <input type="hidden" name="wd" value="" />
+                                <!--input type="image" src="/static/themes/theme_scrapbook/images/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索" name="sa" onclick="this.form.wd.value = this.form.origin.value + ' inurl:www.ruanyifeng.com/blog'" /-->
+                                <input type="image" src="/static/themes/theme_scrapbook/images/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索"
+                                    name="sa" onclick="this.form.wd.value = this.form.origin.value + ' 阮一峰'" />
+                            </div>
+                        </form>
+
+                        <!-- SiteSearch Google -->
+                    </div>
+                    <div id="feed_icon">
+                        <a href="/feed.html" title="订阅Feed">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAUzSURBVHjavFdbbFRVFF3nPjoz7dTWTittaW0jUDRAUqaNojyqREnEQKgfUj9MqqAmhqRt/OCD4CuY+Kckoh+aiGKC+gMJbdHoRysJ8dkhhmJLNdDKtJU+6GMK87j3Hs85d2Z6HzNtMYWb3Dn3NWftvfba+5xNYDl+e6Fkj6yqb/oDRbWq14vlPBLRKCITkxf0ROLt+hNjp1PPSRK4kA3vF1dXNRcWlyA2OQU9eos9opAkAiKxD+XkKO6t15aRWO7J/MgmAZU8MEgexgZHMX518Dh72sYMmVKShnxWuWHdHtxKIDIYTgMuDzgfmSOIQkYMpdUF8OY92Hytt4/jvkg47czzU16iQovM3QFwmNck+Yyduu7D6NA0Z6JR4THntFs9V4tWQg6Ui3s6MwKDncsFTnXKLJhDSeUK3AgPtyhccDzmVs999buRt/1Vm4i0od+hX7+MRG87jPGB/w1u8FPj9xEw7McVrnYuOCvtpjTth3J/nTg99c8LRhKhr6D3dTB5R24bXFwbMXBsyZzeoXaycEpJ95TB09AGX/NpqLVNtw8urnVzLvHjFNxiFqRy2OOHuqUVnue+ACkoWzo4O6lGzTmuHq6nPvY2m9rVqjrIK2rMEKxqyG5NPAKt+wjo0LklgfNxJkZMA3KJvqRUk3z5UFY3QH14P0h+WUY79HPvgv7VuSg4ZRGY1YgZgqXmORccF17sy2ehnf9AeO085K2HQFbtXBScj0LcpgF2cN+WV+DZ/LJQu6gD4R7oV7pBJwbSgtMvfiPoVp56DySwxm7EtkMs1WdAB7qzggsDJKQYsHucSkOudrkiCPWR/fA2nYCn8SNIK4NptSMyAu3sAdDRkIsJdfth0LzSrODUoPNZ4KI9SxJI5UHk7D4GdQfz2us31c7CoHMjRkKuDPHseCMrONVhNcDJwMJpKFVvg9L4OaTiNWm1x789KCqkrXhVBiEz0WYCT2nAzQAD1/vaETv1GrRfP4Vx5cfMNcDPwvP0h0DhanPym7OIf/+O67vcJ1/PCJ4KgdzaUP6Wz+dU+5yIL6fV+PsHGAOdwlPpvvUOyeeAVGyCdqkDNB6DPjsBSrnndfOGevOh3RhGItxvA+fX1CtbGFhgYUFkFMZPR6F1HnClHq8HyubWtJexX06CRmdt33hrd7nA7SFY4qoGpnYuOKcRykPPgDCBcsHx9Iv+fNL2PueBehCWUfYQIIMGLOCcOmXDXsh1+yCt35tUPfvzGFuSvzvoinXOxqa02qOhM6733nVP2MAdaej2XN11DPKjLZCD+yBvahGCo7JfTKAN9UD7s8Oe9zUNIhz8fWI8DG2k38WCFdxugANcXrvTVd1IEbuv3Jour7Hzn7jLMBNfKs7R3i67gRVrbeCOEDhinmWhAatsqdquM2XzHZINhK2cqTjHr/XZdVJUbgN3MWAVXKbSyg9jesRW2xP9di+lwrL5ojM3m2H/kG9hwcIA37c71W6wJdW2J2S5nrjYbq/t1AHAhJsKQeyfPvf6IMJgghPJhFZ4x0KlfLFvt22du45Au/A1SOlGc0P672XXwhLtOcM0kTTEMMd0qkVmMNXxMd/tsedUjInr4SQDgOfeXMSiN0FCL5WHah4L1qqYXPJOJlttd+a5M+YpcG5poLYKQ5f+6JJ4r8bbJYP47hq4r7QAs9PjYNhHJd4o8l5taiwuOpa7AS4XKqI/5NjJbTnaWK92nLdLuhQAJayRNMiygXPBeQN+Qbvu0zDc3y+aUzhbkGR73sI7ljvUnndx2q3t+X8CDAD66FtrIL864AAAAABJRU5ErkJggg=="
+                                alt="" style="border: 0pt none;" />
+                        </a>
+                    </div>
+
                 </div>
-                <ul class="list-group">
-                    <% if (pagination == 2){ %>
-                    <% page.posts.each(function(post){ %>
-                    <%- partial('article', {post: post, index: true}) %>
-                    <% }) %>
-                    <% } %>
-                </ul>
             </div>
         </div>
 
-        <div class="col-md-2">
+
+
+        <div id="content">
+            <div id="content-inner">
+
+
+                <div id="alpha">
+                    <div id="alpha-inner">
+
+                        <h1 id="page-title" class="archive-title">文章存档</h1>
+                        <div class="content-nav">
+                            <p>
+                                <a href="/blog/2018/03/">按日期排列</a>
+                            </p>
+                        </div>
+
+                        <div id="entry-1979" class="entry-asset asset hentry">
+                            <div class="asset-header">
+                                <h2 class="asset-name entry-title">
+                                    <a href="http://www.ruanyifeng.com/blog/2018/03/retire-at-70.html" rel="bookmark">日本70岁退休谈起</a>
+                                </h2>
+                                <p id="asset-tags">
+
+
+                                    分类
+                                    <span class="delimiter">：</span>
+                                    <a href="http://www.ruanyifeng.com/blog/opinions/" rel="tag">观点与感想</a>
+
+
+
+                                </p>
+                            </div>
+                            <div class="asset-content entry-content">
+
+                                <div class="asset-body">
+                                    <p>1、</p>
+
+                                    <p>2018年初，日本政府
+                                        <a href="https://www.qdaily.com/articles/50475.html">修改法律</a>，推迟公务员的退休年龄。</p>
+
+                                </div>
+
+
+
+                                <div class="asset-more-link">
+                                    <p>
+                                        <a href="http://www.ruanyifeng.com/blog/2018/03/retire-at-70.html" rel="bookmark">继续阅读全文 »</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="asset-footer">
+                                <div class="asset-meta">
+                                    <p>
+                                        <span class="byline">
+
+                                            <abbr class="published" title="2018-03-08T08:15:38+08:00">2018年3月 8日 08:15</abbr>
+                                        </span>
+
+                                        <span class="separator">|</span>
+                                        <a href="http://www.ruanyifeng.com/blog/2018/03/retire-at-70.html#comments">留言（20）</a>
+
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="module-categories module">
+                            <h2 class="module-header">最近的20篇文章（共1689篇）</h2>
+                            <div class="module-content">
+                                <ul class="module-list">
+
+
+                                    <li class="module-list-item">2018.03.05：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/03/http2_server_push.html">HTTP/2 服务器推送（Server Push）教程</a>
+                                        <span class="hint">（9条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.02.27：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html">Nginx 容器教程</a>
+                                        <span class="hint">（19条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.02.23：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/02/node-event-loop.html">Node 定时器详解</a>
+                                        <span class="hint">（32条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.02.13：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">Docker 微服务教程</a>
+                                        <span class="hint">（22条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.02.09：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程</a>
+                                        <span class="hint">（34条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.01.21：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/01/assembly-language-primer.html">汇编语言入门教程</a>
+                                        <span class="hint">（56条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.01.11：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/01/cryptocurrency-tutorial.html">加密货币的本质</a>
+                                        <span class="hint">（109条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2018.01.04：
+                                        <a href="http://www.ruanyifeng.com/blog/2018/01/bitcoin-tutorial.html">比特币入门教程</a>
+                                        <span class="hint">（120条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.12.26：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/12/blockchain-tutorial.html">区块链入门教程</a>
+                                        <span class="hint">（145条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.12.19：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html">持续集成服务 Travis CI 教程</a>
+                                        <span class="hint">（19条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.12.13：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/12/image-and-wave-filters.html">图像与滤波</a>
+                                        <span class="hint">（35条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.12.05：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/12/qiang-tang.html">北方的空地</a>
+                                        <span class="hint">（37条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.11.23：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/11/road-ahead.html">博客文集《前方的路》发布</a>
+                                        <span class="hint">（80条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.11.15：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/11/bash-set.html">Bash 脚本 set 命令教程</a>
+                                        <span class="hint">（22条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.11.07：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/11/technology-training.html">技术教育的兴起</a>
+                                        <span class="hint">（58条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.11.02：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/11/2fa-tutorial.html">双因素认证（2FA）教程</a>
+                                        <span class="hint">（30条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.10.24：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/10/bulma.html">CSS 框架 Bulma 教程</a>
+                                        <span class="hint">（36条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.10.17：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/10/head-transplant.html">换头术</a>
+                                        <span class="hint">（67条评论）</span>
+                                    </li>
+
+
+                                    <li class="module-list-item">2017.10.11：
+                                        <a href="http://www.ruanyifeng.com/blog/2017/10/open-source-license-tutorial.html">开源许可证教程</a>
+                                        <span class="hint">（27条评论）</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div id="beta">
+                    <div id="beta-inner">
+                        <div class="module-categories module">
+                            <h2 class="module-header">分类</h2>
+                            <div class="module-content">
+
+                                <ul class="module-list">
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/essays/" title="散文">散文</a>（159）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/opinions/" title="观点与感想">观点与感想</a>（189）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/algorithm/" title="算法与数学">算法与数学</a>（29）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/developer/" title="开发者手册">开发者手册</a>（151）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/computer/" title="理解计算机">理解计算机</a>（52）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/javascript/" title="JavaScript">JavaScript</a>（83）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/startup/" title="创业">创业</a>（59）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/translations/" title="译文集">译文集</a>（42）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/sci-tech/" title="科技爱好者">科技爱好者</a>（157）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/literature/" title="文学爱好者">文学爱好者</a>（37）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/english/" title="英语爱好者">英语爱好者</a>（66）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/clipboard/" title="剪贴板">剪贴板</a>（161）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/notes/" title="笔记本">笔记本</a>（188）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/misc/" title="杂物间">杂物间</a>（290）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/mjos/" title="Joel谈软件">Joel谈软件</a>（14）
+
+
+
+                                    </li>
+
+
+
+
+                                    <li class="module-list-item">
+                                        <a href="http://www.ruanyifeng.com/blog/usenet/" title="USENET">USENET</a>（7）
+
+
+
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-<div style="display:none">
-<script src="http://s4.cnzz.com/stat.php?id=<%= config.site_id %>&web_id=<%= config.site_id %>" language="JavaScript"></script>
-</div>
-    </div>
-</div>
