@@ -1,9 +1,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="generator" content="Movable Type  5.2.2" />
 <link rel="stylesheet" href="<%- url_for(theme.css) %>/base.css" type="text/css" />
+<link rel="stylesheet" href="<%- url_for(theme.css) %>/github-gist.css" type="text/css" />
 <link rel="stylesheet" href="<%- url_for(theme.css) %>/theme.css" type="text/css" />
-<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://feeds.feedburner.com/ruanyifeng" />
-<script type="text/javascript" src="http://www.ruanyifeng.com/blog/mt.js"></script>
-    <title>阮一峰的网络日志  ： 全部文章（按分类查看）</title>
+<script type="text/javascript" src="<%- url_for(theme.js) %>/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="shortcut icon" type="image/x-icon" href="<%- url_for(theme.img)%>/favicon.ico"/>
+<%
+  var title = page.title;
+%>
+  <title><% if (title){ %><%= title %> <% } else{ %><%= config.title %> <% } %></title>
 </head>

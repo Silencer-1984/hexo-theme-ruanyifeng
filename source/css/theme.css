@@ -92,14 +92,12 @@ ul li {
 ol li {
        list-style-type: decimal;
        list-style-position:inside; }
-
-img {
-       border: 2px solid #00398a; }
-       
+#footer-content {
+  text-align: center;
+}
 strong{
   font-weight:800; 
 }
-
 p,li{
   font-size:1.6em;
   line-height:220%;
@@ -140,7 +138,17 @@ body.mobile.two-columns #container{
   min-width:0px;
   overflow: hidden;
 }
-
+body.mobile.one-column #container #container-inner,
+body.mobile.two-columns #container #container-inner{
+  width: 100%;
+  overflow: hidden;
+}
+body.mobile #header-inner,
+body.mobil #content-inner,
+body.mobil #footer-inner {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 @media (max-width: 48rem) {
   #container{
     padding: 0.5em;
@@ -809,7 +817,8 @@ body.mobile.two-columns #homepage_pos img{
        color:#d3d3d3;
        padding-top:0;
        clear:both;  
-       line-height:1.2;     
+       line-height:1.2;  
+       text-align: center   
 }
 
 #footer p{
@@ -825,8 +834,7 @@ body.mobile.two-columns #homepage_pos img{
 }
 
 #footer p{
-  float: right;
-  text-align:right;
+  text-align:center;
   padding:0.3em 0.1em 0.1em 0.3em;
   color:gray;
 }
@@ -890,7 +898,7 @@ div#page-beta{
 /* Entry */
 
 body.one-column #content #alpha div.entry-asset{
-  border-bottom:1px solid #d3d3d3;
+  /* border-bottom:1px solid #d3d3d3; */
   padding-bottom:1em;
 }
 
@@ -1068,7 +1076,7 @@ body.one-column #content #alpha div.asset-content a:visited{
   color:#112233;
 }
 
-body.one-column #content #alpha div.asset-content .highlight{
+body.one-column #content #alpha div.asset-content pre{
   background-color:#f5f2f0;
   padding:1em;
   margin:2em 2em;
@@ -1083,7 +1091,7 @@ body.one-column #content #alpha div.asset-content .highlight{
   overflow: auto;
 }
 
-body.mobile.one-column #content #alpha div.asset-content .highlight{
+body.mobile.one-column #content #alpha div.asset-content pre{
     padding:0.5em 1em;
     margin:1em 1em;
     -moz-border-radius: 1em; /* FF1+ */
@@ -1093,7 +1101,7 @@ body.mobile.one-column #content #alpha div.asset-content .highlight{
 }
 
 @media (max-width: 48rem) {
-   body.one-column #content #alpha div.asset-content .highlight{
+   body.one-column #content #alpha div.asset-content pre{
     padding:0.5em 1em;
     margin:1em 1em;
     -moz-border-radius: 1em; /* FF1+ */
@@ -1294,7 +1302,7 @@ body.one-column #content #alpha #comments .comment-content{
   line-hieght:180%;
 }
 
-body.one-column #content #alpha #comments .comment-content .highlight{
+body.one-column #content #alpha #comments .comment-content pre{
   background-color:#e0dfcc;
   padding:2em;
   margin:2em 2em 2em 2em;
@@ -1304,7 +1312,7 @@ body.one-column #content #alpha #comments .comment-content .highlight{
   font-size: 0.9em
 }
 
-body.one-column #content #alpha #comments .comment-content .highlight pre{
+body.one-column #content #alpha #comments .comment-content pre {
   font-weight:700;
   margin-bottom:1.5em;
   font-size: 1.6em;
@@ -1397,10 +1405,10 @@ body.mobile.one-column #content #alpha #comments .comment-footer{
  * @author Lea Verou
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code,
+pre {
   color: black;
-  text-shadow: 0 1px white;
+  /* text-shadow: 0 1px white; */
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;

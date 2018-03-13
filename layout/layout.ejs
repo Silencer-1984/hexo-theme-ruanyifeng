@@ -2,10 +2,10 @@
 <%- partial('_partial/head')%>
    
 
-    <body id="scrapbook" class="<% if(is_home()) {%>
-        mt-archive-listing mt-category-archive two-columns
-    <%}else{%>
+    <body id="scrapbook" class="<% if(is_post()) {%>
         mt-entry-archive one-column
+    <%}else{%>
+        mt-archive-listing mt-category-archive two-columns
         <%}%>">
         <script type="text/javascript">
             if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) document.body.classList.add('mobile');
