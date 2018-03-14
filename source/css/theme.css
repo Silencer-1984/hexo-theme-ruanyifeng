@@ -1076,7 +1076,7 @@ body.one-column #content #alpha div.asset-content a:visited{
   color:#112233;
 }
 
-body.one-column #content #alpha div.asset-content pre{
+body.one-column #content #alpha div.asset-content pre,blockquote{
   background-color:#f5f2f0;
   padding:1em;
   margin:2em 2em;
@@ -1091,7 +1091,7 @@ body.one-column #content #alpha div.asset-content pre{
   overflow: auto;
 }
 
-body.mobile.one-column #content #alpha div.asset-content pre{
+body.mobile.one-column #content #alpha div.asset-content pre,blockquote{
     padding:0.5em 1em;
     margin:1em 1em;
     -moz-border-radius: 1em; /* FF1+ */
@@ -1101,7 +1101,7 @@ body.mobile.one-column #content #alpha div.asset-content pre{
 }
 
 @media (max-width: 48rem) {
-   body.one-column #content #alpha div.asset-content pre{
+   body.one-column #content #alpha div.asset-content pre,blockquote{
     padding:0.5em 1em;
     margin:1em 1em;
     -moz-border-radius: 1em; /* FF1+ */
@@ -1311,13 +1311,23 @@ body.one-column #content #alpha #comments .comment-content pre{
   border-radius: 1em;
   font-size: 0.9em
 }
-
-body.one-column #content #alpha #comments .comment-content pre {
+body.one-column #content #alpha #comments .comment-content blockquote{
+  background-color:#e0dfcc;
+  padding:1em;
+  margin:2em 2em 2em 2em;
+  -moz-border-radius: 1em; 
+  -webkit-border-radius:1em;
+  border-radius: 1em;
+  font-size: 0.9em
+}
+body.one-column #content #alpha #comments .comment-content pre,blockquote {
   font-weight:700;
   margin-bottom:1.5em;
   font-size: 1.6em;
 }
-
+blockquote p {
+  font-size:100% 
+}
 body.one-column #content #alpha #comments .comment-footer{
   width:40%;
   margin-left:55%;

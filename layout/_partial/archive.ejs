@@ -56,12 +56,10 @@
                                 <div class="module-categories module">
                                     <h2 class="module-header">
                                         <%if(is_home()){%>
-                                            最近的
-                                            <%= config.index_generator.per_page%>篇文章（共
-                                                <%= site.posts.length %>篇)
+                                            最近的<%= config.index_generator.per_page%>篇文章
+                                            （共<%= site.posts.length %>篇)
                                                     <%}else{%>
-                                                        共有
-                                                        <%= page.posts.length %>篇
+                                                        共有<%= page.posts.length %>篇
                                                             <%}%>
                                     </h2>
                                     <div class="module-content">
@@ -89,8 +87,7 @@
                                         <li class="module-list-item">
                                             <a href="/tags/<%= tag.name %>" title="散文">
                                                 <%= tag.name %>
-                                            </a>(
-                                            <%= tag.length %>)
+                                            </a>(<%= tag.length %>)
                                         </li>
                                         <% }) %>
                                 </ul>
