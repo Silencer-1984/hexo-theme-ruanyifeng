@@ -1,11 +1,7 @@
-主题样式来至[阮一峰](http://www.ruanyifeng.com/blog/)的博客。
-
-<!--more-->
-
-## 基本使用
+主题样式来至[阮一峰](http://www.ruanyifeng.com/blog/)的博客。 预览[Demo](https://www.lhccc.top/)
 
 ```git 
-git clone 
+git clone git@github.com:duzhihao-github/hexo-theme-ruanyifeng.git
 ```
 
 ```js

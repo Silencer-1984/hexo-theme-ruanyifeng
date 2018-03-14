@@ -1021,7 +1021,7 @@ body.one-column #content #alpha div.asset-nav div.entry-location-mobile{
 }
 
 body.mobile.one-column #content #alpha div.asset-nav div.entry-location-mobile{
-  display: inline-block;
+  display: none;
   text-align: right;
   float:right;
   width: 20%;
@@ -1090,7 +1090,9 @@ body.one-column #content #alpha div.asset-content pre,blockquote{
   text-shadow: 0 1px white;
   overflow: auto;
 }
-
+body.mobile .hide{
+  display: none;
+}
 body.mobile.one-column #content #alpha div.asset-content pre,blockquote{
     padding:0.5em 1em;
     margin:1em 1em;
