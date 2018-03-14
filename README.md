@@ -76,3 +76,7 @@ highlight_theme: github-gist  //你下载的css文件名
 ## 补充
 
 首页默认显示的最新的文章。摘要写在文章的` <!--more-->`之前。
+
+如有错误先试试`hexo clean`
+
+切换移动端时请刷新。
