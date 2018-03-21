@@ -1,3 +1,4 @@
+[toc]
 主题样式来至[阮一峰](http://www.ruanyifeng.com/blog/)的博客。 预览[Demo](https://www.lhccc.top/)
 
 ```git 
