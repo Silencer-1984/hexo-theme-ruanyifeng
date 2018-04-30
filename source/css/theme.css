@@ -383,7 +383,9 @@ body.one-column #content #alpha .asset-content img{
   -moz-border-radius: 1em;
   -webkit-border-radius: 1em;
   border-radius: 1em;
-
+  margin: 0 auto;
+  display: block;
+  max-width: 98%;
 }
 
 body.mobile.one-column #content #alpha .asset-content img{
